@@ -1,4 +1,4 @@
-# TON Speedrun 
+# TON Speedrun
 
 ## 🚩 Challenge 1: Simple NFT Deploy
 
@@ -10,25 +10,28 @@
 
 ---
 
-# Checkpoint 0: 📦   Install 📚
+# Checkpoint 0: 📦 Install 📚
 
-Required: 
-* [Git](https://git-scm.com/downloads)
-* [Node](https://nodejs.org/en/download/) (Use Version 18 LTS)
-* [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+Required:
+
+- [Git](https://git-scm.com/downloads)
+- [Node](https://nodejs.org/en/download/) (Use Version 18 LTS)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 
 (⚠️ Don't install the linux package `yarn` make sure you install yarn with `npm i -g yarn` or even `sudo npm i -g yarn`!)
 
 ```sh
 git clone https://github.com/romanovichim/TONQuest1.git
 ```
+
 ```sh
 cd challenge-1
 yarn install
 ```
+
 ---
 
-# Checkpoint 1:  🎓 NFT Standart in TON ✒️
+# Checkpoint 1: 🎓 NFT Standart in TON ✒️
 
 So, non-fungible tokens are assets, each instance of which is unique (specific) and cannot be replaced by another similar asset. A non-fungible token is some kind of digital entity certificate with the ability to transfer the certificate through some mechanism.
 
@@ -87,7 +90,7 @@ Result:
 
 ---
 
-# Checkpoint 4:  💊 Сollect the body of the message for NFT mint 💾
+# Checkpoint 4: 💊 Сollect the body of the message for NFT mint 💾
 
 As mentioned above, smart contracts exchange messages, in order to mint the NFT, you need to send a message to the collection contract.
 You can put some paylod in the message - message body. Let's assemble the body for mint NFT. Open `deployNft.ts` file. It looks like this:
@@ -102,41 +105,43 @@ P.S Assembly of the body is in the file `deployNFT.ts`
 
 ---
 
-# Checkpoint 5: 💸  Testnet Coins 💰
+# Checkpoint 5: 💸 Testnet Coins 💰
 
 An attentive reader may have a question, who should send a message with the body we have collected to the smart contract of the collection. There are wallets for this, the wallet can receive external messages and send internal ones, so for mint nft we need a wallet. There are many [different wallets](https://ton.org/wallets) in TON, but I suggest you use a [Tonkeeper](https://tonkeeper.com/).
 
 Let's use the wallet by switching it to the test network and get coins in the test network - we need them to send a message:
-1) Go to the settings and scroll to the very bottom until the inscription "Tonkeeper version X" 
-2) Click 6 times in a row quickly on the Tonkeeper icon above the inscription - the menu for developers will open 
-3) select switch to the test network in it 
-4) to get to the wallet in the test network, test TON, you need to use the tap: https://t.me/testgiver_ton_bot
+
+1. Go to the settings and scroll to the very bottom until the inscription "Tonkeeper version X"
+2. Click 6 times in a row quickly on the Tonkeeper icon above the inscription - the menu for developers will open
+3. select switch to the test network in it
+4. to get to the wallet in the test network, test TON, you need to use the tap: https://t.me/testgiver_ton_bot
 
 ---
 
-# Checkpoint 6: 📌 Mint NFT 📌 
+# Checkpoint 6: 📌 Mint NFT 📌
 
 Ready to mint to the testnet?!?
 
 ```sh
-yarn deploynft 
+yarn deploynft
 ```
 
 On the screen you will see a QR code, scan it and confirm the transaction in the wallet.
 
 Congratulations, you minted nft on the network TON!
 
-
-## Mainnet 
+## Mainnet
 
 If you want to mint your NFT on mainnet (for example, so that it is displayed in the [society.ton.org](https://society.ton.org) profile). Follow these steps:
 
 1. Open `scripts/utils.ts` file and delete `testnet.` part from toncenter endpoint url. After that it should look like this:
+
 ```typescript
 export const toncenter = new TonClient({
-	endpoint: 'https://toncenter.com/api/v2/jsonRPC',
+  endpoint: "https://toncenter.com/api/v2/jsonRPC",
 });
 ```
+
 2. Use your mainnet wallet to scan this qr-code.
 
 P.S. and don't forget to change the address in `script/deployNFT.ts` to your address =)
@@ -171,7 +176,6 @@ P.S. If you want to see an NFT in your wallet, don't forget to change owner addr
 
 ---
 
-
 # ⚔️ Side Quests
 
 Quick results are great, but to play longer, enjoy the ecosystem, I suggest you the following tutorials:
@@ -182,11 +186,4 @@ Quick results are great, but to play longer, enjoy the ecosystem, I suggest you 
 
 After that, I suggest you delve into the language for TON smart contracts:
 
- - https://github.com/romanovichim/TonFunClessons_Eng
-
-
-
-
-
-
- 
+- https://github.com/romanovichim/TonFunClessons_Eng
